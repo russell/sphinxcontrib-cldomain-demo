@@ -6,10 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-sphinx = ">=1.8"
-sphinx-bootstrap-theme = "*"
-pygments-cl-repl = {git = "https://github.com/40ants/pygments-cl-repl.git",editable = true}
-sphinxcontrib-cldomain = {git = "https://github.com/40ants/sphinxcontrib-cldomain.git",editable = true}
+sphinx-cldomain-theme = "*"
+pygments-cl-repl = "*"
+sphinxcontrib-cldomain = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.10"

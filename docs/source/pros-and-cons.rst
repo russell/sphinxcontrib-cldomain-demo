@@ -1,4 +1,4 @@
-Pros & Cons of cldomain
+Pros & Cons of CLDomain
 =======================
 
 Pros
@@ -21,5 +21,5 @@ Cons
 * Syntax is more complex than Markdown and requires some time to get familiar with.
 * Syntax relies on indentation and sometimes it leads to the problems.
 * Sometimes it hard to decrypt Sphinx's error messages when it doesnt do what you've expected.
-* CLdomain is complex to setup. But you can use this repository as a skeleton :)
+* CLDomain is complex to setup. But you can use this repository as a skeleton :)
 * Sphinx and it's extensions are written in Python, I'd prefer to use Common Lisp.

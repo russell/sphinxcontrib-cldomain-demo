@@ -13,7 +13,7 @@ you have to add this piece to your documentation:
 
    example/app
    -----------
-   
+
    .. cl:package:: example/app
 
    .. cl:function:: foo
@@ -43,7 +43,7 @@ example/app
 
    Or insert some graphics:
 
-   .. image:: http://placekitten.com/200/300
+   .. image:: https://common-lisp.net/static/imgs/lisplogo_flag2_128.png
 
 
    By the way, pay attention on the foo's docstring:
@@ -68,7 +68,7 @@ example/app
         to do the real job."
        (example/utils:do-the-job first other))
 
-   But cldomain does not smart enough to do deindentation and displays
+   But CLDomain does not smart enough to do deindentation and displays
    the second paragragraph as a quote:
 
      Internally it calls :cl:function:`example/utils:do-the-job`
@@ -87,13 +87,18 @@ We also add documentation on :ref:`example/utils` package:
 
 .. cl:function:: do-the-job
 
-.. cl:function:: concat                 
+Errors
+--------
 
-   This function is not exported from the package.
-   Sphinx will complain like this:
+::
 
-   ::
+   .. cl:function:: concat
 
-      WARNING: Can't find symbol EXAMPLE/UTILS:concat
+This function is not exported from the package.
+Sphinx exit with the error:
 
-   Also, does not shows the function's docstring.
+::
+
+   sphinxcontrib.cldomain.cldomain.LispDataError: Missing Lisp data for symbol `example/utils:concat'.
+
+       The symbol is not exported from the package `example/utils'.

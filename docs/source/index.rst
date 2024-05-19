@@ -19,5 +19,10 @@ Let's review features, provided by ``cldomain``.
    api
    how-to-build
 
+.. toctree::
+   :maxdepth: 2
+
+   changelog
+
 
 .. include:: pros-and-cons.rst

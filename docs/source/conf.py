@@ -44,10 +44,6 @@ cl_systems = [
     {
         'name': 'example',
         'path': realpath(join(dirname(__file__), '../../')),
-        'packages': [
-            'example/app',
-            'example/utils',
-        ]
     },
 ]
 
@@ -81,7 +77,7 @@ def read_version_from(filename, line_number=4):
                 version = line.split(' ', 1)[0]
                 return version
         return 'unknown'
-    
+
 release = read_version_from('ChangeLog.rst')
 # The short X.Y version.
 version = '.'.join(release.split('.')[:2])
@@ -132,61 +128,16 @@ pygments_style = 'emacs'
 
 # -- Options for HTML output ---------------------------------------------------
 
-import sphinx_bootstrap_theme
-html_theme = 'bootstrap'
+import sphinx_cldomain_theme
+
+html_theme = "cldomain"
 
 # почему-то в модуле его нет
 #html_translator_class = 'sphinx_bootstrap_theme.BootstrapTranslator'
 
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_theme_path = [sphinx_cldomain_theme.get_html_theme_path()]
 
-html_theme_options = {
-    # Navigation bar title. (Default: ``project`` value)
-    # 'navbar_title': "Demo",
-
-    'navbar_sidebarrel': False,
-
-    'navbar_pagenav': False,
-
-    # Tab name for entire site. (Default: "Site")
-    "navbar_site_name": "Contents",
-
-    # Global TOC depth for "site" navbar tab. (Default: 1)
-    # Switching to -1 shows all levels.
-    # 'globaltoc_depth': 2,
-
-    # Include hidden TOCs in Site navbar?
-    #
-    # Note: If this is "false", you cannot have mixed ``:hidden:`` and
-    # non-hidden ``toctree`` directives in the same page, or else the build
-    # will break.
-    #
-    # Values: "true" (default) or "false"
-    # 'globaltoc_includehidden': "true",
-
-    # HTML navbar class (Default: "navbar") to attach to <div> element.
-    # For black navbar, do "navbar navbar-inverse"
-    # 'navbar_class': "navbar navbar-inverse",
-    'navbar_site_name': "Documentation",
-
-    'navbar_links': [("Changelog", "changelog")],
-
-    # Fix navigation bar to top of page?
-    # Values: "true" (default) or "false"
-    # 'navbar_fixed_top': "true",
-
-    # Location of link to source.
-    # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "footer",
-
-    # Bootswatch (http://bootswatch.com/) theme.
-    #
-    # Options are nothing with "" (default) or the name of a valid theme
-    # such as "amelia" or "cosmo".
-    #
-    # Note that this is served off CDN, so won't be available offline.
-    'bootswatch_theme': "yeti",
-}
+html_theme_options = {}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -226,9 +177,11 @@ html_static_paths = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
-html_sidebars = {'**': ['localtoc.html'],
-                 'search': None,
-                 'glossary': None}
+html_sidebars = {'**': ['localtoc.html',
+                        'relations.html',
+                        'sourcelink.html',
+                        'searchbox.html'],
+                 }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
